@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="agro">
+        <img class="logo" src="./fto/foto/planta.jpg" alt="AgroSoft">
+        <h1>AgroSoft</h1>
+        <p class="subtitulo">Agricultura Inteligente</p>
+
+    <div class="bloque">
+        <div class="recu">
+                <a href="index.html" class="atras">←</a>
+                <div class="texx">
+                    <h2>Recuperar Contraseña</h2>
+                    <p class="ingre">Verifica tu identidad</p>
+                </div>
+            </div>
+
+            <div class="prueba">
+                <img class="icono" src="./fto/icono/aprobar.png" alt="aprobado">
+                <div class="texx">
+                    <p>Hemos enviado un codigo de 6<br>digitos a</p>
+                    <h3>rsk68@gmail.com</h3>
+                </div>
+            </div>
+
+            <label>Codigo de verificacion</label>
+            <div class="contraseña">000000</div>
+           
+            
+             <label>contraseña</label>
+                <div class="contraseña">
+                     <img class="icono" src="./fto/icono/candado.png" alt="candado">
+                    <input type="password" placeholder="Minimo 6 caracteres">
+
+    </div>
+     <button id="boton" class="enviar">Restablecer contraseña</button>
+     <a href="recuperar.html" class="olvido">¿No recibiste el codigo? Reenviar</a>
+     </a>
+    </div>
+</body>
+<script>
+    // Seleccionas tu botón
+const boton = document.getElementById("boton");
+
+// Al hacer clic, cambia la ubicación de la ventana
+boton.onclick = () => {
+    window.location.href = "index.html"; 
+};
+</script>
+</html>

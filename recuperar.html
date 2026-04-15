@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="agro">
+        <img class="logo" src="./fto/foto/planta.jpg" alt="AgroSoft">
+        <h1>AgroSoft</h1>
+        <p class="subtitulo">Agricultura Inteligente</p>
+
+        <div class="bloque">
+            <div class="recu">
+                <a href="index.html" class="atras">←</a>
+                <div class="texx">
+                    <h2>Recuperar Contraseña</h2>
+                    <p class="ingre">Ingresa tu Correo electronico</p>
+                </div>
+            </div>
+
+
+
+
+            <label>Correo Electronico</label>
+            <div class="correo">
+                <img class="icono" src="./fto/icono/correo.png" alt="correo">
+                <input type="email" placeholder="usuario@gmail.com">
+            </div>
+            <button id="boton" class="enviar">Enviar Codigo</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    // Seleccionas tu botón
+const boton = document.getElementById("boton");
+
+// Al hacer clic, cambia la ubicación de la ventana
+boton.onclick = () => {
+    window.location.href = "recuperando.html"; 
+};
+
+</script>
+
+</html>

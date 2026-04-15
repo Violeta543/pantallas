@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="pantallaCarga">
+        <div class="logotipo">
+            <img src="./fto/foto/planta.jpg" alt="AgroSoft">
+            <h1>AgroSoft</h1>
+            <p>Agricultura Inteligente</p>
+        </div>
+    </div>
+    <form id="cargas" style="display: none;"></form>
+    <div class="agro">
+        <img class="logo" src="./fto/foto/planta.jpg" alt="AgroSoft">
+        <h1>AgroSoft</h1>
+        <p class="subtitulo">Agricultura Inteligente</p>
+
+        <div class="bloque">
+            <div class="sesion">
+                <button id="btnIniciar" class="activo">Iniciar Sesion</button>
+                <button id="btnRegistrarse">Registrarse</button>
+
+            </div>
+            <div id="iniciof">
+                <label>Correo Electronico</label>
+                <div class="correo">
+                    <img class="icono" src="./fto/icono/correo.png" alt="correo">
+                    <input type="email" placeholder="usuario@gmail.com">
+                </div>
+                <label>Contraseña</label>
+                <div class="contraseña">
+                    <img class="icono" src="./fto/icono/candado.png" alt="candado">
+                    <input type="password" placeholder="***************">
+                </div>
+                <button class="iniciar">Iniciar Sesion</button>
+                <a href="recuperar.html" class="olvido">¿Olvidaste la contraseña?</a>
+            </div>
+
+
+            <div id="registroform" style="display: none;">
+                <label>nombre</label>
+                <div class="nombre">
+                    <img class="icono" src="./fto/icono/perfil.png" alt="perfil">
+                    <input type="text" placeholder="tu nombre">
+                </div>
+
+                <label> correo electronico</label>
+                <div class="correo">
+                    <img class="icono" src="./fto/icono/correo.png" alt="correo">
+                    <input type="email" placeholder="usuario@gmail.com">
+                </div>
+
+                <label>contraseña</label>
+                <div class="contraseña">
+                    <img class="icono" src="./fto/icono/candado.png" alt="candado">
+                    <input type="password" placeholder="**********">
+                </div> <label>Rol de Usuario</label>
+                <div class="sesions">
+                    <button class="activo">Agricultor</button>
+                    <button>Administrador</button>
+
+                </div>
+
+                <button id="crearCuenta" class="iniciar">Registrarse</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        const botones = document.querySelectorAll(".sesion button");
+
+        botones.forEach(boton => {
+            boton.addEventListener("click", () => {
+
+                botones.forEach(b => b.classList.remove("activo"));
+
+                boton.classList.add("activo");
+
+            });
+        });
+        const botoness = document.querySelectorAll(".sesions button");
+
+        botoness.forEach(boto => {
+            boto.addEventListener("click", () => {
+
+                botoness.forEach(b => b.classList.remove("activo"));
+
+                boto.classList.add("activo");
+
+            });
+        });
+
+        const InicioBtn = document.getElementById("btnIniciar");
+        const RegistroBtn = document.getElementById("btnRegistrarse");
+
+        const iniciof = document.getElementById("iniciof");
+        const registroform = document.getElementById("registroform");
+
+        InicioBtn.onclick = () => {
+
+            iniciof.style.display = "block";
+            registroform.style.display = "none";
+
+        }
+
+        RegistroBtn.onclick = () => {
+
+            iniciof.style.display = "none";
+            registroform.style.display = "block";
+
+        }
+
+        const crearCuenta =
+            document.getElementById("crearCuenta");
+
+        crearCuenta.onclick = () => {
+            registroform.style.display = "none";
+            iniciof.style.display = "block";
+
+            RegistroBtn.classList.remove("activo");
+            InicioBtn.classList.add("activo");
+        }
+        window.onload = () => {
+            const carga = document.getElementById('pantallaCarga');
+            const car = document.getElementById('cargas');
+
+            // Comprobar si ya se mostró la carga en esta sesión
+            if (sessionStorage.getItem('cargado')) {
+                // Si ya se mostró, la quitamos al instante 
+                carga.style.display = 'none';
+                car.style.display = 'block';
+            } else {
+                // Si es la primera vez, hacemos la animación de 2 segundos
+                setTimeout(() => {
+                    carga.style.opacity = '0';
+
+                    setTimeout(() => {
+                        carga.style.display = 'none';
+                        car.style.display = 'block';
+                        // Guardamos la marca de que ya se cargó una vez
+                        sessionStorage.setItem('cargado', 'true');
+                    }, 500);
+                }, 2000);
+            }
+        };
+    </script>
+</body>
+
+</html>
